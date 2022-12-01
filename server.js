@@ -9,6 +9,9 @@ const methodOverride = require("method-override")
 const Movie = require("./models/movie")
 const path = require("path")
 const moviesController = require("./controllers/movie")
+const userRouter = require("./controllers/user")
+
+
 
 // Database Connection
 // Setup inputs for our connect function
@@ -216,6 +219,14 @@ app.use(express.static("public")); // serve files from public statically
 
 // Link to Router
 app.use("/movies", moviesController)
+
+// Link to User
+app.use("/user", userRouter)
+
+// Home
+app.get("/", (req, res) => {
+    res.send("your server is running... better catch it.");
+});
 
 // Server Listener
 const PORT = process.env.PORT;
