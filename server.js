@@ -8,6 +8,7 @@ const methodOverride = require("method-override")
 //const mongoose = require("mongoose")
 const Movie = require("./models/movie")
 const path = require("path")
+const moviesController = require("./controllers/movie")
 
 // Database Connection
 // Setup inputs for our connect function
@@ -58,7 +59,7 @@ app.use(methodOverride("_method")); // override for put and delete requests from
 app.use(express.urlencoded({ extended: true })); // parse urlencoded request bodies
 app.use(express.static("public")); // serve files from public statically
 
-// // Routes
+// Home
 // app.get("/", (req, res) => {
 //     res.send("your server is running... better catch it.");
 // });
@@ -212,6 +213,9 @@ app.use(express.static("public")); // serve files from public statically
 //         res.json({ error });
 //     }
 // })
+
+// Link to Router
+app.use("/movies", moviesController)
 
 // Server Listener
 const PORT = process.env.PORT;

@@ -8,9 +8,9 @@ class Show extends React.Component {
       <DefaultLayout>
       <div>
         <article>
-          <img src={movie.poster} width="400" height="650" alt="" />
+          <img src={movie.poster} width="300" height="550" alt="" />
           <h2>{movie.title}</h2>
-          <h3>{movie.director}</h3>
+          <h3>{"Directed By "}{movie.director}</h3>
 
           Cast: 
           <ul>

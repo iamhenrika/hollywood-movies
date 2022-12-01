@@ -5,16 +5,8 @@ const Movie = require("../models/movie")
 // Create Route
 const router = express.Router()
 
-// Export the Router
-module.exports = router
-
-
-// Home
-app.get("/", (req, res) => {
-    res.send("your server is running... better catch it.");
-});
-
-app.get("/movies/seed", (req, res) => {
+// Routes
+router.get("/seed", (req, res) => {
     // array of starter movies
     const startMovies = [
         {
@@ -65,18 +57,18 @@ app.get("/movies/seed", (req, res) => {
 // I.N.D.U.C.E.S
 
 // Index Route
-app.get("/movies", async (req, res) => {
+router.get("/", async (req, res) => {
     const movies = await Movie.find({});
     res.render("movies/Index", { movies });
 });
 
 // New Route
-app.get("/movies/new", (req, res) => {
+router.get("/new", (req, res) => {
     res.render("movies/New")
 })
 
 // Delete (Destroy)
-app.delete("/movies/:id", (req, res) => {
+router.delete("/:id", (req, res) => {
     // get the id from params
     const id = req.params.id;
     // delete the fruit
@@ -93,7 +85,7 @@ app.delete("/movies/:id", (req, res) => {
 });
 
 // Update
-app.put("/movies/:id", async (req, res) => {
+router.put("/:id", async (req, res) => {
     try {
         const id = req.params.id;
         req.body.watchAgain = req.body.watchAgain === "on" ? true : false;
@@ -107,7 +99,7 @@ app.put("/movies/:id", async (req, res) => {
 })
 
 // Create (Post)
-app.post("/movies", async (req, res) => {
+router.post("/", async (req, res) => {
     try {
         req.body.watchAgain = req.body.watchAgain === "on" ? true : false;
         req.body.cast = req.body.cast.split(",")
@@ -121,7 +113,7 @@ app.post("/movies", async (req, res) => {
 })
 
 // Edit
-app.get("/movies/:id/edit", (req, res) => {
+router.get("/:id/edit", (req, res) => {
     // get the id from params
     const id = req.params.id;
     // get the fruit from the database
@@ -138,7 +130,7 @@ app.get("/movies/:id/edit", (req, res) => {
 });
 
 // Show Route
-app.get("/movies/:id", async (req, res) => {
+router.get("/:id", async (req, res) => {
     const id = req.params.id
 
     try {
@@ -149,3 +141,6 @@ app.get("/movies/:id", async (req, res) => {
         res.json({ error });
     }
 })
+
+// Export the Router
+module.exports = router
