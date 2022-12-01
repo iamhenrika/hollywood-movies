@@ -5,54 +5,54 @@ const Movie = require("../models/movie")
 // Create Route
 const router = express.Router()
 
-// Routes
-router.get("/seed", (req, res) => {
-    // array of starter movies
-    const startMovies = [
-        {
-            title: "Matrix",
-            releaseDate: "March 24, 1999",
-            length: 136,
-            genre: "Sci-Fi",
-            poster: "https://www.themoviedb.org/t/p/w220_and_h330_face/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg",
-            director: "The Wachowskis",
-            cast: ["Keanu Reeves", "Carrie Ann Moss", "Laurence Fishburne"],
-            rating: "R",
-            watchAgain: true,
-        },
-        {
-            title: "50 First Dates",
-            releaseDate: "February 12, 2004",
-            length: 99,
-            genre: "Rom-Com",
-            poster: "https://m.media-amazon.com/images/M/MV5BMjAwMzc4MDgxNF5BMl5BanBnXkFtZTYwNjUwMzE3._V1_FMjpg_UX1000_.jpg",
-            director: "Peter Segal",
-            cast: ["Adam Sandler", "Drew Barrymore", "Rob Schneider"],
-            rating: "PG-13",
-            watchAgain: true,
-        },
-        {
-            title: "The Dark Knight",
-            releaseDate: "July 14, 2008",
-            length: 152,
-            genre: "Action/Adventure",
-            poster: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
-            director: "Christopher Nolan",
-            cast: ["Christian Bale", "Michael Caine", "Heath Ledger"],
-            rating: "PG-13",
-            watchAgain: false,
-        },
-    ];
+// Home
+// router.get("/seed", (req, res) => {
+//     // array of starter movies
+//     const startMovies = [
+//         {
+//             title: "Matrix",
+//             releaseDate: "March 24, 1999",
+//             length: 136,
+//             genre: "Sci-Fi",
+//             poster: "https://www.themoviedb.org/t/p/w220_and_h330_face/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg",
+//             director: "The Wachowskis",
+//             cast: ["Keanu Reeves", "Carrie Ann Moss", "Laurence Fishburne"],
+//             rating: "R",
+//             watchAgain: true,
+//         },
+//         {
+//             title: "50 First Dates",
+//             releaseDate: "February 12, 2004",
+//             length: 99,
+//             genre: "Rom-Com",
+//             poster: "https://m.media-amazon.com/images/M/MV5BMjAwMzc4MDgxNF5BMl5BanBnXkFtZTYwNjUwMzE3._V1_FMjpg_UX1000_.jpg",
+//             director: "Peter Segal",
+//             cast: ["Adam Sandler", "Drew Barrymore", "Rob Schneider"],
+//             rating: "PG-13",
+//             watchAgain: true,
+//         },
+//         {
+//             title: "The Dark Knight",
+//             releaseDate: "July 14, 2008",
+//             length: 152,
+//             genre: "Action/Adventure",
+//             poster: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
+//             director: "Christopher Nolan",
+//             cast: ["Christian Bale", "Michael Caine", "Heath Ledger"],
+//             rating: "PG-13",
+//             watchAgain: false,
+//         },
+//     ];
 
-    // Delete All Movies
-    Movie.deleteMany({}).then((data) => {
-        // Seed Starter Movies
-        Movie.create(startMovies).then((data) => {
-            // Send created fruits as response to confirm creation
-            res.json(data);
-        });
-    });
-});
+//     // Delete All Movies
+//     Movie.deleteMany({}).then((data) => {
+//         // Seed Starter Movies
+//         Movie.create(startMovies).then((data) => {
+//             // Send created fruits as response to confirm creation
+//             res.json(data);
+//         });
+//     });
+// });
 
 // I.N.D.U.C.E.S
 

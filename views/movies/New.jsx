@@ -32,6 +32,8 @@ class New extends React.Component {
                         <label>WATCH AGAIN :<input type="checkbox" name="watchAgain" /> </label>
                     </fieldset>
                     <input type="submit" value="create New Movie" />
+                    <br />
+                    <a href="/movies/"><button>Back to Main</button></a>
                 </form>
             </DefaultLayout>
         )
